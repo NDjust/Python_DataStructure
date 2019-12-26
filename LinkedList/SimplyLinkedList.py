@@ -23,7 +23,7 @@ class LinkedList:
         while current is not None:
             s += repr(current.data)
             if current.next is not None:
-                s += "->"
+                s += " -> "
             current = current.next
 
         return s
@@ -86,7 +86,7 @@ class LinkedList:
 
         if self.nodeCount == 1:
             data = self.head.data
-            self.head = None
+            self.head = self.head.next
         else:
             prev = self.get_at(pos - 1)
             if pos == self.nodeCount:
@@ -129,3 +129,20 @@ class LinkedList:
             current = current.next
 
         return data_list
+
+
+if __name__ == "__main__":
+    node1 = Node(1)
+    node2 = Node(2)
+    node3 = Node(3)
+
+    # test case 다시 해보기
+    LinkedList = LinkedList()
+    LinkedList.insert_at(0, node1)
+    LinkedList.insert_at(1, node1)
+    print(LinkedList)
+    LinkedList.insert_at(2, node2)
+    print(LinkedList)
+    LinkedList.insert_at(3, node3)
+    LinkedList.delete_at(1)
+    print(LinkedList)
