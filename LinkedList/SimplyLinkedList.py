@@ -19,6 +19,7 @@ class LinkedList:
         s = ""
 
         current = self.head
+
         while current is not None:
             s += repr(current.data)
             if current.next is not None:
