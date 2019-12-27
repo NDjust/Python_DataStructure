@@ -84,7 +84,7 @@ class LinkedList:
         if pos <= 0 or pos > self.nodeCount:
             raise IndexError
 
-        if self.nodeCount == 1:
+        if pos == 1:
             data = self.head.data
             self.head = self.head.next
         else:
@@ -136,13 +136,11 @@ if __name__ == "__main__":
     node2 = Node(2)
     node3 = Node(3)
 
-    # test case 다시 해보기
     LinkedList = LinkedList()
-    LinkedList.insert_at(0, node1)
     LinkedList.insert_at(1, node1)
-    print(LinkedList)
     LinkedList.insert_at(2, node2)
     print(LinkedList)
     LinkedList.insert_at(3, node3)
+    print(LinkedList)
     LinkedList.delete_at(1)
     print(LinkedList)
