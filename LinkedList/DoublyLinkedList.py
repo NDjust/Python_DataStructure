@@ -75,7 +75,7 @@ class DoublyLinkedList:
         prev = self.get_at(pos - 1)
         return self.insert_after(prev, newNode)
 
-    def pop_after(self,prev):
+    def pop_after(self, prev):
         curr = prev.next
         prev.next = curr.next
         curr.next.prev = prev
