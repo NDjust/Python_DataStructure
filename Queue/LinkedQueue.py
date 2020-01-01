@@ -1,5 +1,6 @@
 from LinkedList.DoublyLinkedList import DoublyLinkedList, Node
 
+
 # Test Case 해볼 것.
 class LinkedQueue:
 
@@ -27,4 +28,4 @@ class LinkedQueue:
         if self.is_empty():
             raise IndexError("Queue is Empty!")
 
-        return self.data.get_at(self.data.get_length()).datas
+        return self.data.get_at(self.data.get_length()).data
