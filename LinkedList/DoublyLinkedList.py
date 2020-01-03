@@ -60,8 +60,10 @@ class DoublyLinkedList:
 
     def insert_after(self, prev, newNode):
         next = prev.next
-        newNode.next = prev
+
         newNode.next = next
+        newNode.prev = prev
+
         prev.next = newNode
         next.prev = newNode
         self.nodeCount += 1
@@ -99,7 +101,7 @@ class DoublyLinkedList:
     def traversal(self):
         data_list = []
 
-        current = self.head
+        current = self.head.next
 
         while current is not None:
             data_list.append(current.data)
@@ -119,7 +121,7 @@ if __name__ == "__main__":
 
     DL.insert_at(1, node1)
     DL.insert_at(2, node2)
-    DL.insert_at(1, node3)
+    DL.insert_at(3, node3)
     DL.insert_at(4, node4)
 
     print(DL)
