@@ -92,7 +92,10 @@ class DummyLinkedList:
         return self.pop_after(prev)
 
     def concat(self, L):
-        pass
+        L.tail.prev.next = self.head.next
+        self.head.next.prev = L.tail.prev
+        self.tail = L.tail
+        self.nodeCount += L.nodeCount
 
     def traverse(self):
         data_list = []
